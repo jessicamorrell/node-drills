@@ -25,4 +25,3 @@ const urlenc = bodyParser.urlencoded({extended : false})
 so you can use [this](https://github.com/expressjs/body-parser#bodyparserurlencodedoptions)
 
 
-
