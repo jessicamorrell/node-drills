@@ -1,15 +1,33 @@
-# node drills
+# Node Drills
 
-in each directory, you'll find a javascript file with instructions in comments.
+In each directory, you'll find an `index.js` with instructions.
 
-there will be things in here with which you're not familiar.
+There _will_ be things in here that are completely unfamiliar. I strongly suggest keeping [this](https://nodejs.org/api/) open at first.
 
-the first few are in bare node (no express/koa/hapi/whatever)
+The first few problems are just using bare Node (no Express/Koa/Hapi/whatever web frameworks).
 
-there are a handful of express drills
+After this, there are a handful of Express drills.
 
-and then there are a few mongo/mongoose problems
+You'll touch on ES2015 going through these. It's time to exercies your Googling skillz! Read up on `let`, `const`, and arrow functions.
 
-i strongly suggest keeping [this](https://nodejs.org/api/) open for the first few
+Remember that programming in Node should almost always be done asynchronously. `require`s are synchronous; almost everything else
+should be using callbacks. Here's an example of a very simple Node program, using modern ECMAScript.
 
-have fun!
+```javascript
+'use strict'
+
+const
+  net    = require('net')
+, port   = 5678
+, server = net.createServer((connection) => {
+  // do stuff
+})
+server.listen(port)
+```
+
+At the end there will be some problems based around Mongo and Mongoose.
+
+This is a lot of new material all at once. Do what you're comfortable doing. If you're looking for something to do over interim week,
+maybe do some research and try to finish the rest. If you power through them all, I definitely recommend [trying this project](https://github.com/r-walsh/es6-profiles)
+
+Have fun!
