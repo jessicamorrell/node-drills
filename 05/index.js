@@ -1,4 +1,8 @@
-// write an express server!
-// you'll need to run `npm i` in this directory (the package.json is done for you).
-// your only dependency is express, here.
-// let's have this server just serve a string to the client, rather than a file
+var express = require('express')
+  , app     = express
+
+app.get('/', function(req, res){
+  res.send('Hello World')
+})
+app.listen(3000)
+

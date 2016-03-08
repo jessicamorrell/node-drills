@@ -1,6 +1,27 @@
 #! /usr/bin/env node
 
-// here we're going to serve the `index.html` file using just
-// built-in node modules
-// you'll be using `http` again, and also node's `fs` (filesystem).
-// remember `__dirname`? you'll want to use that, too.
+// this is very sraightforward, but in case it's somehow unclear...
+// all this does is serve up an index.html file in cwd
+// that's it.
+// want options? reloading? anything like that? this is totally not
+// the right server for you.
+
+var http  = require('http')
+  , fs    = require('fs')
+  , path  = require('path')
+  , index = path.resolve(__dirname, './index.html')
+  , port  = 4444
+
+http.createServer(function(req, res){
+  var stream = fs.createReadStream(index)
+  stream.on('open', function(){
+    res.writeHead(200, {'Content-Type': 'text/html'})
+  })
+  stream.on('error', function(){
+    res.writeHead(400)
+    res.end()
+  })
+  stream.pipe(res)
+}).listen(port)
+
+console.log('check over at ' + port)
