@@ -17,7 +17,7 @@ random quote as well?
 The solution branch uses a few ES2015 features: `let` and `const` take the place of `var`,
 and the arrow function is used frequently. Especially in Node, where anonymous functions
 are _everywhere_ (because Node is all about the callbacks), this shorthand can be quite a
-time-saver. Here's a usage example:
+time-saver. Here's are two usage examples:
 
 ```
 // ES5.1
@@ -29,7 +29,14 @@ app.listen(port, function(){
 app.listen(port, () => {
   console.log('listening on port ' + port)
 })
+
+// ES5.1
+var returner = function(returnMe){
+  return returnMe
+}
+
+// ES2015
+var returner = returnMe => returnMe
 ```
 
 [And a good blog post on what's new with arrow functions](https://www.nczonline.net/blog/2013/09/10/understanding-ecmascript-6-arrow-functions/).
-
